@@ -4,7 +4,7 @@ App Engine config
 from google.appengine.ext import vendor
 
 # Add any libraries installed in the "lib" folder.
-vendor.add('lib')
+vendor.add('venv/Lib/site-packages/')
 
 
 def gae_mini_profiler_should_profile_production():
