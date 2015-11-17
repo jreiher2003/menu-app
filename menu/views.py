@@ -14,19 +14,5 @@ from models import Place
 @app.route('/')
 @app.route('/hello')
 def index():
-    user = {'nickname': 'Jeffaroni'}  
-    posts = [  # fake array of posts
-        { 
-            'author': {'nickname': 'John'}, 
-            'body': 'Beautiful day in Portland!' 
-        },
-        { 
-            'author': {'nickname': 'Susan'}, 
-            'body': 'The Avengers movie was so cool!' 
-        }
-    ]
     place = db.session.query(Place).all()
-    return render_template('base.html', title="Jeff's boom boom room",
-    									user=user,
-    									posts=posts,
-    									place=place)
+    return render_template('base.html', place=place)
