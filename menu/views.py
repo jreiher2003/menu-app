@@ -1,5 +1,6 @@
 from flask import render_template
-from menu import app
+from menu import app, db
+from models import Place
 
 
 # from sqlachemy import create_engine 
@@ -24,6 +25,8 @@ def index():
             'body': 'The Avengers movie was so cool!' 
         }
     ]
+    place = db.session.query(Place).all()
     return render_template('base.html', title="Jeff's boom boom room",
     									user=user,
-    									posts=posts)
+    									posts=posts,
+    									place=place)

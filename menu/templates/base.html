@@ -10,6 +10,11 @@
 
 <body>
 	<h1>Hello World this is {{ user.nickname }}</h1>
+	{% for pl in place %}
+	<h2>{{ pl.name }}</h2>
+	{% endfor %}
+	
+
 	{% for p in posts %}
 	<p>{{ p.author.nickname }}</p>
 	<p>{{ p.body }}</p>
